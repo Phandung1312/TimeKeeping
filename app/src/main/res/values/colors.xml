@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#F0F4F3</color>
+    <color name="statusbar">#50C2C9</color>
+    <color name="forgot_password">#1F54D3</color>
+    <color name="icon_input">#ACB1C1</color>
+    <color name="text_title">#5A5D67</color>
+    <color name="primary_background">#E64A19</color>
+    <color name="line_gray">#C5C5C5</color>
+    <color name="gray">#8C7E7B7B</color>
+    <color name="orange">#F4430B</color>
+    <color name="header_bg">#ED7213</color>
+    <color name="blue">#455DF6</color>
+    <color name="primaryColor">#ff6c2f</color>
+    <color name="primaryLightColor">#ff9e5d</color>
+    <color name="primaryDarkColor">#c53a00</color>
+    <color name="error_color">@android:color/holo_red_light</color>
+    <color name="light_text_color">#FFFFFFFF</color>
+    <color name="text_color">#333333</color>
+    <color name="hint_text_color">#B7B7B7</color>
+    <color name="regular_price_color">#cbcbcb</color>
+    <color name="inactive_text_color">#8D8D8D</color>
+    <color name="background_splash_color">#FF6C2F</color>
+
+    <color name="background_header_color">@color/primaryColor</color>
+
+    <color name="icon_color_bottom_normal">@color/primaryLightColor</color>
+    <color name="icon_color_bottom_selected">@color/primaryColor</color>
+
+
+    <color name="icon_color_normal">#B7B7B7</color>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/departmentFragment"
+        android:name="com.pbl.timekeeping.ui.department.DepartmentFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_department">
+        <action
+            android:id="@+id/action_departmentFragment_to_departmentDetaislFragment"
+            app:destination="@id/departmentDetaislFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePassFragment"
+        android:name="com.pbl.timekeeping.ui.changepassword.ChangePassFragment"
+        android:label="ChangePassFragment"
+        tools:layout="@layout/fragment_change_pass"/>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.pbl.timekeeping.ui.forgotpassword.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.pbl.timekeeping.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/departmentDetaislFragment"
+        android:name="com.pbl.timekeeping.ui.department.departmentdetails.DepartmentDetailsFragment"
+        android:label="DepartmentDetaislFragment"
+        tools:layout="@layout/fragment_department_details">
+        <argument
+            android:name="idDepartment"
+            app:argType="integer" />
+        <argument
+            android:name="departmentName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_departmentDetaislFragment_to_employeeInfoFragment"
+            app:destination="@id/employeeInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeInfoFragment"
+        android:name="com.pbl.timekeeping.ui.department.employeedetails.EmployeeInfoFragment"
+        android:label="EmployeeInfoFragment"
+        tools:layout="@layout/fragment_employee_info">
+        <argument
+            android:name="departmentName"
+            app:argType="string" />
+        <argument
+            android:name="idEmployee"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.pbl.timekeeping.ui.account.AccountFragment"
+        android:label="AccountFragment"
+        tools:layout="@layout/fragment_account"/>
+    <fragment
+        android:id="@+id/historyAttendanceFragment"
+        android:name="com.pbl.timekeeping.ui.workhistory.HistoryAttendanceFragment"
+        android:label="HistoryAttendanceFragment"
+        tools:layout="@layout/fragment_history_attendance"/>
+</navigation>

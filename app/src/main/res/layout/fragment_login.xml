@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="LoginClass">
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.pbl.timekeeping.ui.login.LoginViewModel" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/shape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="Chào mừng trở lại! "
+            android:textColor="@color/text_title"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_draw"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="40sp"
+            android:text="Đăng nhập"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edit_email"
+            android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+            android:textColor="@color/black"
+            android:drawablePadding="6dp"
+            android:paddingStart="20dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:onTextChanged="@{viewModel::onEmailChanged}"
+            android:background="@drawable/input"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="360dp"
+            android:layout_height="50dp"/>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:layout_marginTop="5dp"
+           android:layout_width="wrap_content"
+           android:layout_height="20dp">
+           <TextView
+               android:layout_marginStart="40dp"
+               android:text="Email không được để trống."
+               textString = "@{viewModel.currentAccount.email}"
+               isChanged="@{viewModel.isChanged()}"
+               style="@style/error_text_style"
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+           <TextView
+               android:layout_marginStart="40dp"
+               android:text="Email không đúng định dạng."
+               email = "@{viewModel.currentAccount.email}"
+               style="@style/error_text_style"
+               android:visibility="gone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+       </LinearLayout>
+        <EditText
+            android:id="@+id/edit_password"
+            android:drawableStart="@drawable/ic_baseline_key_24"
+            android:textColor="@color/black"
+            android:drawablePadding="6dp"
+            android:paddingStart="20dp"
+            android:hint="Mật khẩu"
+            android:onTextChanged="@{viewModel::onPasswordChanged}"
+            android:inputType="textPassword"
+            android:background="@drawable/input"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="360dp"
+            android:layout_height="50dp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_password_empty"
+                android:layout_marginStart="40dp"
+                android:text="Mật khẩu không được để trống."
+                textString = "@{viewModel.currentAccount.password}"
+                isChanged="@{viewModel.isChanged()}"
+                android:visibility="gone"
+                style="@style/error_text_style"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="25dp"
+                android:text="Quên mật khẩu?"
+                android:textColor="@color/forgot_password"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_login"
+            android:background="@drawable/round_bg"
+            android:layout_marginTop="10dp"
+            android:text="Đăng nhập"
+            android:alpha="@{viewModel.currentAccount.validateData()? 1.0f : 0.8f}"
+            android:enabled="@{viewModel.currentAccount.validateData()}"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</layout>
