@@ -14,6 +14,9 @@ class AccountFragment : BaseFragment<AccountClass>(AccountClass::inflate){
     }
 
     override fun initListeners() {
+        dataBinding.layoutChangepassword.setOnClickListener {
+            findNavController().navigate(R.id.action_accountFragment_to_changePassFragment)
+        }
         dataBinding.layoutLogout.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }

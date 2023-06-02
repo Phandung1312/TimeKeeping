@@ -5,6 +5,7 @@ import com.pbl.timekeeping.data.apis.AccountApi
 import com.pbl.timekeeping.data.apis.DepartmentApi
 import com.pbl.timekeeping.data.apis.EmployeeApi
 import com.pbl.timekeeping.data.apis.EmployeeStatusApi
+import com.pbl.timekeeping.data.apis.WorkScheduleApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -68,5 +69,10 @@ class NetworkModule {
     @Provides
     fun providesEmployeeStatusApi(retrofit: Retrofit) : EmployeeStatusApi{
         return retrofit.create(EmployeeStatusApi::class.java)
+    }
+
+    @Provides
+    fun providesWorkScheduleApi(retrofit: Retrofit) : WorkScheduleApi{
+        return retrofit.create(WorkScheduleApi::class.java)
     }
 }

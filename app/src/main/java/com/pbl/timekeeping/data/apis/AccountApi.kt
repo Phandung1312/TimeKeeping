@@ -1,10 +1,13 @@
 package com.pbl.timekeeping.data.apis
 
 import com.pbl.timekeeping.data.models.Account
+import com.pbl.timekeeping.data.models.ChangePasswordRequest
 import com.pbl.timekeeping.data.models.Employee
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface AccountApi {
@@ -21,11 +24,8 @@ interface AccountApi {
       @Field("email") email : String
     ) : Response<Boolean>
 
-    @POST("users/resetpass")
-    @FormUrlEncoded
+    @POST("users/changepassword")
     suspend fun changePassword(
-        @Field("email") email : String,
-        @Field("oldpassword") oldPassword : String,
-        @Field("newpassword") newPassword : String
-    ) : Response<Boolean>
+        @Body request: ChangePasswordRequest
+    ): Response<Boolean>
 }

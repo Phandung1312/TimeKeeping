@@ -109,17 +109,6 @@
                 android:layout_height="wrap_content"
                 tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/tv_forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="25dp"
-                android:text="Quên mật khẩu?"
-                android:textColor="@color/forgot_password"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <Button
             android:id="@+id/btn_login"

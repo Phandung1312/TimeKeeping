@@ -4,6 +4,7 @@ import com.pbl.timekeeping.base.network.BaseRemoteService
 import com.pbl.timekeeping.base.network.NetworkResult
 import com.pbl.timekeeping.data.apis.AccountApi
 import com.pbl.timekeeping.data.models.Account
+import com.pbl.timekeeping.data.models.ChangePasswordRequest
 import com.pbl.timekeeping.data.models.Employee
 import javax.inject.Inject
 
@@ -19,10 +20,8 @@ class AccountService @Inject constructor(private val accountApi: AccountApi) : B
     }
 
     suspend fun changePassword(
-        email: String,
-        oldPassword: String,
-        newPassword: String
+        changePasswordRequest: ChangePasswordRequest
     ): NetworkResult<Boolean> {
-        return callApi { accountApi.changePassword(email, oldPassword, newPassword) }
+        return callApi { accountApi.changePassword(changePasswordRequest) }
     }
 }

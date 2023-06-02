@@ -24,8 +24,8 @@ class HistoryAttendanceFragment : BaseFragment<HistoryAttendanceClass>(HistoryAt
         val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
         val month = calendar.get(Calendar.MONTH) + 1
         val year = calendar.get(Calendar.YEAR)
-        dataBinding.tvStartDay.text = "$dayOfMonth/$month/$year"
-        dataBinding.tvEndDay.text = "$dayOfMonth/$month/$year"
+        dataBinding.tvStartDay.text = "$year-${month}-$dayOfMonth"
+        dataBinding.tvEndDay.text = "$year-${month}-$dayOfMonth"
     }
 
     override fun initListeners() {
@@ -33,7 +33,7 @@ class HistoryAttendanceFragment : BaseFragment<HistoryAttendanceClass>(HistoryAt
             val calendar = Calendar.getInstance()
             val dialog = DatePickerDialog(requireContext(),
                 { view, year, month, dayOfMonth ->
-                    dataBinding.tvStartDay.text = "$dayOfMonth/${month + 1}/$year"
+                    dataBinding.tvStartDay.text = "$year-${month + 1}-$dayOfMonth"
                 },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DATE))
             dialog.show()
         }
@@ -41,7 +41,7 @@ class HistoryAttendanceFragment : BaseFragment<HistoryAttendanceClass>(HistoryAt
             val calendar = Calendar.getInstance()
             val dialog = DatePickerDialog(requireContext(),
                 { view, year, month, dayOfMonth ->
-                    dataBinding.tvEndDay.text = "$dayOfMonth/${month + 1}/$year"
+                    dataBinding.tvEndDay.text = "$year-${month + 1}-$dayOfMonth"
                 },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DATE))
             dialog.show()
         }

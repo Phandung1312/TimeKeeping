@@ -11,5 +11,6 @@ data class EmployeeStatus(
     @Json(name = "roll_name")
     val roleName : String?,
     val status : Int?,
-    val time : String?
+    val time : String?,
+    val date : String?
 )

@@ -41,6 +41,10 @@ class MainActivity : BaseActivity() {
                     navController.navigate(R.id.historyAttendanceFragment)
                     true
                 }
+                R.id.calendar ->{
+                    navController.navigate(R.id.workScheduleFragment)
+                    true
+                }
                 R.id.profile ->{
                     navController.navigate(R.id.accountFragment)
                     true

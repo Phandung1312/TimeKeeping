@@ -1,6 +1,7 @@
 package com.pbl.timekeeping.data.repositories
 
 import com.pbl.timekeeping.base.network.NetworkResult
+import com.pbl.timekeeping.data.models.ChangePasswordRequest
 import com.pbl.timekeeping.data.services.AccountService
 import com.pbl.timekeeping.di.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
@@ -24,7 +25,8 @@ class AccountRepository @Inject constructor(
 
     suspend fun changePassword(email: String, oldPassword: String, newPassword: String) =
         withContext(dispatcher) {
-            when (val result = accountService.changePassword(email, oldPassword, newPassword)) {
+            val changePasswordRequest = ChangePasswordRequest(email,oldPassword,newPassword,"null")
+            when (val result = accountService.changePassword(changePasswordRequest)) {
                 is NetworkResult.Success ->{
                     result.data
                 }

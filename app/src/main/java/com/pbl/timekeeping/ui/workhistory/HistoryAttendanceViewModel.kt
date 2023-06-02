@@ -24,7 +24,7 @@ class HistoryAttendanceViewModel @Inject constructor(
         parentJob = viewModelScope.launch(handler) {
             val calendar = Calendar.getInstance()
             calendar.add(Calendar.DATE, -5)
-            val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
             val startDay = dateFormat.format(calendar.time)
             val endDay = dateFormat.format(Date())
             val currentList = employeeStatusRepository.getHistoryAttendance(id, startDay, endDay)

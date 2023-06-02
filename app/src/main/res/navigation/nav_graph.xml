@@ -64,10 +64,19 @@
         android:id="@+id/accountFragment"
         android:name="com.pbl.timekeeping.ui.account.AccountFragment"
         android:label="AccountFragment"
-        tools:layout="@layout/fragment_account"/>
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_changePassFragment"
+            app:destination="@id/changePassFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyAttendanceFragment"
         android:name="com.pbl.timekeeping.ui.workhistory.HistoryAttendanceFragment"
         android:label="HistoryAttendanceFragment"
         tools:layout="@layout/fragment_history_attendance"/>
+    <fragment
+        android:id="@+id/workScheduleFragment"
+        android:name="com.pbl.timekeeping.ui.workschedule.WorkScheduleFragment"
+        android:label="WorkScheduleFragment"
+        tools:layout="@layout/fragment_work_schedule"/>
 </navigation>

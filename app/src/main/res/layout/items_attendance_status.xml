@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
+        <import type="android.view.View"/>
         <variable
             name="employeeStatus"
             type="com.pbl.timekeeping.data.models.EmployeeStatus" />
@@ -58,6 +59,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:visibility="@{employeeStatus.date == null ? View.GONE : View.VISIBLE}"
+                    date="@{employeeStatus.date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dp"
