@@ -41,7 +41,7 @@ class DepartmentDetailsFragment : BaseFragment<DepartmentDetailsClass>(Departmen
     override fun initData() {
         val id = args.idDepartment
         viewModel.getSession(id, page = 1)
-        registerAllExceptionEvent(viewModel, viewLifecycleOwner)
+      //  registerAllExceptionEvent(viewModel, viewLifecycleOwner)
         viewModel.listSession.observe(viewLifecycleOwner){
             lists.clear()
             lists.addAll(it)

@@ -24,7 +24,7 @@ class DepartmentFragment : BaseFragment<DepartmentClass>(DepartmentClass::inflat
 
     override fun initData() {
         viewModel.fetchData()
-        registerAllExceptionEvent(viewModel, viewLifecycleOwner)
+       // registerAllExceptionEvent(viewModel, viewLifecycleOwner)
         registerObserverSmallLoadingEvent(viewModel, viewLifecycleOwner)
         viewModel.listDepartments.observe(viewLifecycleOwner){
                 departments ->
